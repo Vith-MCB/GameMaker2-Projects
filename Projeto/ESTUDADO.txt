@@ -1,0 +1,84 @@
+/*Tipos de dados:
+Texto - Strings (str)
+Numerico - Numeros em geral (int, float, etc)
+Boolean - true (1) e false(0)
+*/
+
+//Criando e definindo variáveis
+tuezin = "Matue";
+sobrenome = "Moreira";
+numero = 777;
+
+//Pegando Informações do usuário
+nome_usuario = get_string("Digite o seu nome: ", "Vitor");
+idade = get_integer("Digite sua idade: ", 0);
+
+
+if show_question("Você gosta de Trap? ")
+{
+	show_message("777");
+} else{
+	show_message("Você nao e hype bro!");
+}
+
+//Printando no "terminal"
+show_message("Bom dia, " + nome_usuario);
+show_message(idade);
+show_message(tuezin +" "+ sobrenome);
+
+// Operadores aritméricos
+// + - Adiçao | "-" - Subtração| / - Divisao| % - Resto da divisao
+
+// Operadores relacionais
+// > Maior | < Menor | <= , >= Maior, menor que | == igual | != diferente 
+
+// Operador Unário
+// i++  Aumenta em um | i--  Diminui em um
+
+// Condicionais
+// if(condicao){
+} else {
+}
+
+idade_usuario = get_integer("Qual a sua idade? ",0);
+if(idade_usuario > 15) && (idade_usuario < 18) {
+	show_message("Você pode acessar alguns conteúdos do site!");
+	show_message("Porém, alguns conteúdos estarão indisponíveis!");
+} else {
+	show_message("Seja bem vindo!");
+}
+
+
+// Operadores Logicos
+
+idade = get_integer("Informe sua idade:", 0);
+mentir_idade = show_question("Esta disposto a mentir a idade?");
+
+if(idade > 18){
+	if (mentir_idade == 1){
+		show_message("Você não precisa mentir a idade!")
+	}
+	show_message("Seja bem vindo ao site!");
+} else if (idade<18) && (mentir_idade == 1){
+	show_message("Mentir a idade é feio... Você pode acessar o site!");
+} else {
+	show_message("Site Bloqueado!");
+}
+
+// Tipos de variáveis:
+
+// Variável de objetos
+// ex: var1 = "teste";
+
+//Variável de evento
+//ex: var variavel2 = "temporaria";
+
+//Variavel global
+//ex: global.var3 = "teste2" // Para chamar: show_message(global.var3);
+
+// instance_destroy(); || Destroi uma instância
+
+
+
+
+

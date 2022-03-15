@@ -1,0 +1,16 @@
+Jungle Fly
+Background:selva
+
+Personagem: pássaro (FEITO)
+- fisica (feita)
+colisao chao e ceu (feita)
+colisao arvores 
+
+
+parendolia:  (feito)
+-arvores distantes (sem cor por fog)
+- arvores mais perto (mais cores)
+
+montes: (feito)
+- Baixo: arvores
+- Cima: cipo
