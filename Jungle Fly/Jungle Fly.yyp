@@ -2,6 +2,7 @@
   "resources": [
     {"id":{"name":"snd_lvl_up","path":"sounds/snd_lvl_up/snd_lvl_up.yy",},"order":4,},
     {"id":{"name":"spr_background","path":"sprites/spr_background/spr_background.yy",},"order":6,},
+    {"id":{"name":"spr_penas","path":"sprites/spr_penas/spr_penas.yy",},"order":17,},
     {"id":{"name":"spr_back4","path":"sprites/spr_back4/spr_back4.yy",},"order":2,},
     {"id":{"name":"obj_tabela_level","path":"objects/obj_tabela_level/obj_tabela_level.yy",},"order":13,},
     {"id":{"name":"nte_brainstorm","path":"notes/nte_brainstorm/nte_brainstorm.yy",},"order":0,},
@@ -17,6 +18,7 @@
     {"id":{"name":"obj_paralax","path":"objects/obj_paralax/obj_paralax.yy",},"order":2,},
     {"id":{"name":"spr_back3","path":"sprites/spr_back3/spr_back3.yy",},"order":3,},
     {"id":{"name":"snd_musica","path":"sounds/snd_musica/snd_musica.yy",},"order":1,},
+    {"id":{"name":"obj_penas","path":"objects/obj_penas/obj_penas.yy",},"order":14,},
     {"id":{"name":"spr_colisor","path":"sprites/spr_colisor/spr_colisor.yy",},"order":7,},
     {"id":{"name":"spr_back5","path":"sprites/spr_back5/spr_back5.yy",},"order":5,},
     {"id":{"name":"spr_arvore_baixo","path":"sprites/spr_arvore_baixo/spr_arvore_baixo.yy",},"order":11,},
@@ -34,7 +36,6 @@
     {"id":{"name":"spr_seta","path":"sprites/spr_seta/spr_seta.yy",},"order":13,},
     {"id":{"name":"spr_fundo_controles","path":"sprites/spr_fundo_controles/spr_fundo_controles.yy",},"order":15,},
     {"id":{"name":"spr_arvores","path":"sprites/spr_arvores/spr_arvores.yy",},"order":9,},
-    {"id":{"name":"Sprite17","path":"sprites/Sprite17/Sprite17.yy",},"order":16,},
     {"id":{"name":"obj_passaro","path":"objects/obj_passaro/obj_passaro.yy",},"order":0,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
