@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_asa","path":"sprites/spr_asa/spr_asa.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_asa",
     "tags": [],
     "resourceType": "GMSequence",

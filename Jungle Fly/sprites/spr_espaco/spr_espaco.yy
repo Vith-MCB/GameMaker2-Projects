@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_espaco","path":"sprites/spr_espaco/spr_espaco.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_espaco",
     "tags": [],
     "resourceType": "GMSequence",

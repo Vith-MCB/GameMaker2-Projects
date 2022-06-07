@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_fundo_controles","path":"sprites/spr_fundo_controles/spr_fundo_controles.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_fundo_controles",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_tronco","path":"sprites/spr_tronco/spr_tronco.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_tronco",
     "tags": [],
     "resourceType": "GMSequence",

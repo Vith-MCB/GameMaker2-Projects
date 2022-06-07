@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_arvore_baixo","path":"sprites/spr_arvore_baixo/spr_arvore_baixo.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_arvore_baixo",
     "tags": [],
     "resourceType": "GMSequence",

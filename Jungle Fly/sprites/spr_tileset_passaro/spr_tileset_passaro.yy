@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_tileset_passaro","path":"sprites/spr_tileset_passaro/spr_tileset_passaro.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_tileset_passaro",
     "tags": [],
     "resourceType": "GMSequence",

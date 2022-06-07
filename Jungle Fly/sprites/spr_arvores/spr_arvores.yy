@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_arvores","path":"sprites/spr_arvores/spr_arvores.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_arvores",
     "tags": [],
     "resourceType": "GMSequence",

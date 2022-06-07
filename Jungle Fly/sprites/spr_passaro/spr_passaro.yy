@@ -95,7 +95,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_passaro","path":"sprites/spr_passaro/spr_passaro.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_passaro",
     "tags": [],
     "resourceType": "GMSequence",
