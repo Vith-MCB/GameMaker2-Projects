@@ -1,6 +1,7 @@
 {
   "resources": [
     {"id":{"name":"spr_nave","path":"sprites/spr_nave/spr_nave.yy",},"order":0,},
+    {"id":{"name":"nt_brainStorm","path":"notes/nt_brainStorm/nt_brainStorm.yy",},"order":0,},
     {"id":{"name":"obj_nave","path":"objects/obj_nave/obj_nave.yy",},"order":0,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
