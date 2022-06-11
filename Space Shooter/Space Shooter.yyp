@@ -1,15 +1,19 @@
 {
   "resources": [
     {"id":{"name":"obj_controller","path":"objects/obj_controller/obj_controller.yy",},"order":3,},
+    {"id":{"name":"obj_explosion","path":"objects/obj_explosion/obj_explosion.yy",},"order":6,},
     {"id":{"name":"spr_nave","path":"sprites/spr_nave/spr_nave.yy",},"order":0,},
     {"id":{"name":"obj_tiroInimigo","path":"objects/obj_tiroInimigo/obj_tiroInimigo.yy",},"order":4,},
     {"id":{"name":"spr_enemy","path":"sprites/spr_enemy/spr_enemy.yy",},"order":2,},
+    {"id":{"name":"spr_explosion","path":"sprites/spr_explosion/spr_explosion.yy",},"order":5,},
     {"id":{"name":"obj_enemy","path":"objects/obj_enemy/obj_enemy.yy",},"order":2,},
     {"id":{"name":"obj_tiroplayer","path":"objects/obj_tiroplayer/obj_tiroplayer.yy",},"order":1,},
     {"id":{"name":"spr_tiro","path":"sprites/spr_tiro/spr_tiro.yy",},"order":1,},
     {"id":{"name":"spr_tiroInimigo","path":"sprites/spr_tiroInimigo/spr_tiroInimigo.yy",},"order":3,},
     {"id":{"name":"nt_brainStorm","path":"notes/nt_brainStorm/nt_brainStorm.yy",},"order":0,},
     {"id":{"name":"obj_nave","path":"objects/obj_nave/obj_nave.yy",},"order":0,},
+    {"id":{"name":"spr_efeitoTiroPegou","path":"sprites/spr_efeitoTiroPegou/spr_efeitoTiroPegou.yy",},"order":4,},
+    {"id":{"name":"obj_tiroPegou","path":"objects/obj_tiroPegou/obj_tiroPegou.yy",},"order":5,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "Options": [
