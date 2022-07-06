@@ -7,10 +7,10 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 3,
-  "bbox_right": 12,
-  "bbox_top": 1,
-  "bbox_bottom": 20,
+  "bbox_left": 1,
+  "bbox_right": 14,
+  "bbox_top": 0,
+  "bbox_bottom": 22,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"96822f25-e841-4b6e-915c-9362547a6dfd","path":"sprites/spr_efeitoTiro/spr_efeitoTiro.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"96822f25-e841-4b6e-915c-9362547a6dfd","path":"sprites/spr_efeitoTiro/spr_efeitoTiro.yy",},"LayerId":{"name":"ddcf57f4-67f7-424e-9c75-4ade61fd04eb","path":"sprites/spr_efeitoTiro/spr_efeitoTiro.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_efeitoTiro","path":"sprites/spr_efeitoTiro/spr_efeitoTiro.yy",},"resourceVersion":"1.0","name":"96822f25-e841-4b6e-915c-9362547a6dfd","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"a9f6e59a-ef1f-4d2e-b9f5-315ab547364d","path":"sprites/spr_efeitoTiro/spr_efeitoTiro.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"a9f6e59a-ef1f-4d2e-b9f5-315ab547364d","path":"sprites/spr_efeitoTiro/spr_efeitoTiro.yy",},"LayerId":{"name":"ddcf57f4-67f7-424e-9c75-4ade61fd04eb","path":"sprites/spr_efeitoTiro/spr_efeitoTiro.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_efeitoTiro","path":"sprites/spr_efeitoTiro/spr_efeitoTiro.yy",},"resourceVersion":"1.0","name":"a9f6e59a-ef1f-4d2e-b9f5-315ab547364d","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_efeitoTiro","path":"sprites/spr_efeitoTiro/spr_efeitoTiro.yy",},
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"b7da4060-a833-4297-95c6-c30c0a550f4e","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"96822f25-e841-4b6e-915c-9362547a6dfd","path":"sprites/spr_efeitoTiro/spr_efeitoTiro.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"f51bc3e7-7c69-4628-9fa2-b83321d2351d","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"a9f6e59a-ef1f-4d2e-b9f5-315ab547364d","path":"sprites/spr_efeitoTiro/spr_efeitoTiro.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
