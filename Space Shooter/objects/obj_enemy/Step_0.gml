@@ -1,3 +1,3 @@
 if(y > 1180){
-	instance_destroy();
+	instance_destroy(id,false);
 }
