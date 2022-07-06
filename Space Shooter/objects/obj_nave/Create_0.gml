@@ -1,4 +1,4 @@
-//Defining velocities
+//Movimentation system
 
 velh = 0;
 velv = 0;
@@ -30,5 +30,18 @@ atirando = function(){
 	fire = keyboard_check_pressed(vk_space);
 	if (fire) {
 		instance_create_layer(x, y - (sprite_height/4), "fire", obj_tiroplayer);
+	}
+}
+
+
+//Life system
+
+globalvar playerLife;
+playerLife = 3;
+
+pLife = function(){
+	if(playerLife = 0){
+		instance_create_layer(x,y,"Player",obj_explosion);
+		instance_destroy();
 	}
 }
