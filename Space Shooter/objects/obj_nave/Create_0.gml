@@ -36,8 +36,10 @@ atirando = function(){
 
 //Life system
 
-globalvar playerLife;
+globalvar playerLife, actLife, staticLife;
 playerLife = 3;
+staticLife = 3;
+actLife = playerLife;
 
 pLife = function(){
 	if(playerLife = 0){
