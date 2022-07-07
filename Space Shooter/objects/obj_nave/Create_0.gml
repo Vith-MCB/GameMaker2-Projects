@@ -47,3 +47,10 @@ pLife = function(){
 		instance_destroy();
 	}
 }
+
+damage = function(){
+	global.guardaBlend = image_blend;
+	image_blend = c_red;
+	image_alpha = 0;
+	alarm[0] = 5;
+}
