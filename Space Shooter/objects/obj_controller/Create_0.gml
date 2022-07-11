@@ -25,6 +25,3 @@ randomize();
 
 //Creating the weakest enemies + alphas (stronger)
 alarm[0] = room_speed;
-
-//Creating smarter eneies
-alarm[1] = room_speed * 2.4;
