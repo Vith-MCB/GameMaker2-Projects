@@ -1,8 +1,8 @@
-image_xscale = 0.85;
-image_yscale = 0.85;
+image_xscale = 0.95;
+image_yscale = 0.95;
 
 image_blend = c_fuchsia;
 
-vspeed += 7;
+vspeed += 6;
 
 alarm[1] = 10;

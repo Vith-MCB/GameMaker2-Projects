@@ -30,8 +30,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Player and effects",
+    "path": "folders/Objects/Player and effects.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_explosion",

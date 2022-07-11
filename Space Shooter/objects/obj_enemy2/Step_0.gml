@@ -1,4 +1,4 @@
-if(playerLife > 0){
+if(instance_exists(obj_nave)){
 	pathEnemyX = obj_nave.x;
 	x = lerp(x, pathEnemyX, 0.008);
 }

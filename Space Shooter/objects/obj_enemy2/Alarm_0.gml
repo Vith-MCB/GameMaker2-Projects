@@ -1,4 +1,4 @@
-if(y>0 && playerLife > 0)
+if(y>0 && instance_exists(obj_nave))
 {	
 	pathEnemyX = obj_nave.x;
 	instance_create_layer(x, y + (sprite_height/2), "Player", obj_tiroInimigo2);

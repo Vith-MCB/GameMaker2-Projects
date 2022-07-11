@@ -1,5 +1,21 @@
 //Creating a level
-global.level = 1;
+
+/*
+globalvar hard, medium, easy;
+
+hard = 3;
+medium = 2;
+easy = 1;
+*/
+
+///@method ganha_pontos(pontos)
+ganha_pontos = function(pontos){
+	global.points += pontos;
+}
+
+global.points = 0;
+
+global.level = 0;
 
 //Creating bigger enemies
 global.isAlpha = 0;
@@ -11,4 +27,4 @@ randomize();
 alarm[0] = room_speed;
 
 //Creating smarter eneies
-alarm[1] = room_speed * 1.7;
+alarm[1] = room_speed * 2.4;
