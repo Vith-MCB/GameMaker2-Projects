@@ -3,7 +3,7 @@
   "compression": 1,
   "volume": 0.64,
   "preload": false,
-  "bitRate": 8,
+  "bitRate": 128,
   "sampleRate": 48000,
   "type": 1,
   "bitDepth": 1,

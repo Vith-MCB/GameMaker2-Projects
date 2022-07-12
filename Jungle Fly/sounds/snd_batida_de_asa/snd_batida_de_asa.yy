@@ -3,10 +3,10 @@
   "compression": 3,
   "volume": 0.19,
   "preload": false,
-  "bitRate": 16,
-  "sampleRate": 5512,
+  "bitRate": 128,
+  "sampleRate": 48000,
   "type": 1,
-  "bitDepth": 0,
+  "bitDepth": 1,
   "audioGroupId": {
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",

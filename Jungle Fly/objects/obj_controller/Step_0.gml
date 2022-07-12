@@ -1,5 +1,5 @@
 if(room != rm_perdeu){
-	//sistema de pontos
+	//Points system
 	if(global.level < 3){
 		pontos += 0.1;
 	}
@@ -16,13 +16,14 @@ if(room != rm_perdeu){
 	if(pontos > proximo_level){
 		global.level++;
 	
-		//tocando som de level up
+		//Playing the lvl up sound
 		audio_play_sound(snd_lvl_up,1,false);
 	
-		//aumentando pontos necessários
+		//Doubles the next lvl necessary points
 		proximo_level *= 2;
 	}
 
+	//Storing the highscore 
 	if(global.level > global.maiorLevel){
 		global.maiorLevel = global.level;
 	}

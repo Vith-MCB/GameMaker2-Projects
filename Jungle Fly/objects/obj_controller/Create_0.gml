@@ -1,12 +1,10 @@
 randomize();
-//Iniciando alarme
 
-
-//Sistema de pontos
+//Points system
 pontos = 0;
 global.level = 1;
 
-//pontos necessarios
+//necessary points to the next lvl
 proximo_level = 100;
 
 var tempo_minimo = 1/(1+(global.level*0.1));
