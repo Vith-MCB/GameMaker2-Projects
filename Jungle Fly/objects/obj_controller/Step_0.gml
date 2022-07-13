@@ -27,4 +27,9 @@ if(room != rm_perdeu){
 	if(global.level > global.maiorLevel){
 		global.maiorLevel = global.level;
 	}
+	
+	//Storing the highest amount of points
+	if(pontos>global.maiorPontuacao){
+		global.maiorPontuacao = pontos;
+	}
 }

@@ -20,7 +20,6 @@
     {"id":{"name":"obj_setaTI","path":"objects/obj_setaTI/obj_setaTI.yy",},"order":17,},
     {"id":{"name":"rm_telaInicial","path":"rooms/rm_telaInicial/rm_telaInicial.yy",},"order":1,},
     {"id":{"name":"spr_passaroFrente","path":"sprites/spr_passaroFrente/spr_passaroFrente.yy",},"order":24,},
-    {"id":{"name":"Object20","path":"objects/Object20/Object20.yy",},"order":20,},
     {"id":{"name":"snd_pressionouSpace","path":"sounds/snd_pressionouSpace/snd_pressionouSpace.yy",},"order":6,},
     {"id":{"name":"spr_espaco","path":"sprites/spr_espaco/spr_espaco.yy",},"order":14,},
     {"id":{"name":"snd_musicaTI","path":"sounds/snd_musicaTI/snd_musicaTI.yy",},"order":5,},
