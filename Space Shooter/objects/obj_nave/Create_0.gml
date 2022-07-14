@@ -54,3 +54,12 @@ damage = function(){
 	image_alpha = 0;
 	alarm[0] = 5;
 }
+
+//Life display system
+lifeDisplay = function(){
+	if(actLife > playerLife){
+		audio_play_sound(snd_damage,1,0);
+		damage();
+		actLife = playerLife;
+	}
+}
