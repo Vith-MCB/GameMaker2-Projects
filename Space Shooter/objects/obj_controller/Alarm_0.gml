@@ -1,3 +1,11 @@
+//Generating random y for the enemys
+randomYenemyAlpha = irandom_range(0, -270);
+randomYenemy1 = irandom_range(0, -170);
+
+//Generating random x for the enemys
+randomXenemyAlpha = irandom_range(50, 1900);
+randomXenemy1 = irandom_range(50, 1900);
+
 if(instance_exists(obj_nave)){
 	randomize();
 
@@ -7,11 +15,11 @@ if(instance_exists(obj_nave)){
 	global.isAlpha = irandom_range(1, 7);
 
 	if(global.isAlpha>5){
-		instance_create_layer(irandom_range(50, 1900), random_range(0, -170), "Player", obj_enemyAlpha);
+		instance_create_layer(randomXenemyAlpha, randomYenemyAlpha, "Player", obj_enemyAlpha);
 	}
 
 	for(i=0; i <= enemysNumber; i++){ 
-		instance_create_layer(irandom_range(50, 1900), random_range(0, -97), "Player", obj_enemy);
+		instance_create_layer(randomXenemy1, randomYenemy1, "Player", obj_enemy);
 	}
 
 	alarm[0] = room_speed * 5;

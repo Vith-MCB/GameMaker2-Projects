@@ -26,10 +26,19 @@ move = function(){
 	x += velh;
 	y += velv;
 }
+
+
+//Shot rate
+global.shotRate = 2;
+
+//Shooting function
 atirando = function(){
-	fire = keyboard_check_pressed(vk_space);
-	if (fire) {
-		instance_create_layer(x, y - (sprite_height/4), "fire", obj_tiroplayer);
+	if(keyboard_check(vk_space) && alarm[1] == -1){
+	//Initializin the alarm for the shot
+	alarm[1] = room_speed/global.shotRate;
+	
+	//Generating the shot
+	instance_create_layer(x, y - (sprite_height/4), "fire", obj_tiroplayer);
 	}
 }
 
