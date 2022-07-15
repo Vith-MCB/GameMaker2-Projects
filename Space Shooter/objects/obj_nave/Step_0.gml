@@ -10,3 +10,6 @@ lifeDisplay();
 
 //Automatic shot
 atirando();
+
+//Upgrading shot
+upgradeShot();

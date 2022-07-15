@@ -42,6 +42,17 @@ atirando = function(){
 	}
 }
 
+//Shot level upgrade
+
+upgradeShot = function(){
+	if(keyboard_check_pressed(vk_up) && global.shotRate <= 5){
+		global.shotRate += 1;
+	}
+	if(keyboard_check_pressed(vk_down) && global.shotRate >= 2){
+		global.shotRate -= 1;
+	}
+}
+
 
 //Life system
 
