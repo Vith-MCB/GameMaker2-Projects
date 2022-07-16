@@ -34,11 +34,23 @@ global.shotRate = 2;
 //Shooting function
 atirando = function(){
 	if(keyboard_check(vk_space) && alarm[1] == -1){
-	//Initializin the alarm for the shot
-	alarm[1] = room_speed/global.shotRate;
-	
-	//Generating the shot
-	instance_create_layer(x, y - (sprite_height/4), "fire", obj_tiroplayer);
+		//Initializin the alarm for the shot
+		alarm[1] = room_speed/global.shotRate;
+		
+		//Shot level
+		if(global.shotRate == 2){
+			//Generating the shot level 1
+			instance_create_layer(x, y - (sprite_height/4), "fire", obj_tiroplayer);
+		}
+		else if(global.shotRate == 3){
+			//Generating the shot level 2
+			leftWingY = y - ((sprite_height/4)-25);
+			leftWingX = x - 50;
+			rightWingX = x + 50;
+			
+			instance_create_layer(leftWingX, leftWingY, "fire", obj_tiro2);
+			instance_create_layer(rightWingX, leftWingY-1, "fire", obj_tiro2);
+		}
 	}
 }
 
