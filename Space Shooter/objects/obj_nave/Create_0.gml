@@ -28,7 +28,7 @@ move = function(){
 }
 
 
-//Shot rate
+//Shot rate (level)
 global.shotRate = 2;
 
 
@@ -36,7 +36,7 @@ global.shotRate = 2;
 //Shot level upgrade
 
 upgradeShot = function(){
-	if(keyboard_check_pressed(vk_up) && global.shotRate <= 5){
+	if(keyboard_check_pressed(vk_up) && global.shotRate <= 6){
 		global.shotRate += 1;
 	}
 	if(keyboard_check_pressed(vk_down) && global.shotRate >= 2){
@@ -105,23 +105,31 @@ shot4 = function(){
 	leftShot.hspeed = -4;
 	rightShot.hspeed = 4;
 	
+	//changing sideshot angles
+	leftShot.image_angle = 15;
+	rightShot.image_angle = -15;
+	
 }
 
 //Shooting function
 atirando = function(){
 	if(keyboard_check(vk_space) && alarm[1] == -1){
 		//Initializin the alarm for the shot
-		alarm[1] = room_speed/global.shotRate;
+		alarm[1] = room_speed;
 		
-		//Shot level
+		//Shot level 1
 		if(global.shotRate == 2){
 			//Generating the shot level 1
 			instance_create_layer(x, y - (sprite_height/4), "fire", obj_tiroplayer);
 		}
+		
+		//shot level 2
 		else if(global.shotRate == 3){
 			//Generating the shot level 2
 			shot2();
 		}
+		
+		//shot level 3
 		else if(global.shotRate == 4){
 			//Generating the shot level 3 (2 lvl.2 shots + 1 lvl.1)
 			
@@ -132,8 +140,16 @@ atirando = function(){
 			//Generating the shot level 2
 			shot2();
 		}
+		
+		//shot level 4
 		else if(global.shotRate == 5){
 			shot4();
+		}
+		
+		//shot level 5
+		else if(global.shotRate == 6){
+			shot4();
+			shot2();
 		}
 	}
 }
