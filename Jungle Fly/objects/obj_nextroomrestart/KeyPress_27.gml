@@ -1,1 +1,1 @@
-alarm[1] = 5;
+game_end();
