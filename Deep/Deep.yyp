@@ -4,6 +4,7 @@
     {"id":{"name":"spr_tileTest","path":"sprites/spr_tileTest/spr_tileTest.yy",},"order":1,},
     {"id":{"name":"objTile","path":"objects/objTile/objTile.yy",},"order":1,},
     {"id":{"name":"sPlayerStill","path":"sprites/sPlayerStill/sPlayerStill.yy",},"order":0,},
+    {"id":{"name":"sPlayerJump","path":"sprites/sPlayerJump/sPlayerJump.yy",},"order":2,},
     {"id":{"name":"objPlayer","path":"objects/objPlayer/objPlayer.yy",},"order":0,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],

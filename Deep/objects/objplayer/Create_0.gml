@@ -20,13 +20,17 @@ movePlayer = function(){
 	//Movimentation Logic
 	move = right - left;
 	
-	//Sprite rotation
-	while(left){
+	//Sprite rotation and animation
+	if(move > 0){
 		sprite_index = sPlayerWalk;
-		image_xscale *= -1;
+		image_xscale = 3;
 	} 
-	while (right){
+	else if(move < 0){
 		sprite_index = sPlayerWalk;
+		image_xscale = -3;
+	}
+	else if(move == 0){
+		sprite_index = sPlayerStill;
 	}
 
 	//Horizontal speed
@@ -68,4 +72,17 @@ verticalMove = function(){
 	if(jump && place_meeting(x,y+1,objTile)){
 		vsp = -7;
 	}
+		//Sprite for jumping
+	if(!place_meeting(x,y+1,objTile)){
+		
+		sprite_index = sPlayerJump;
+		image_speed = 0;
+		
+		if(sign(vsp)>0){
+			image_index = 1;
+		} else {
+			image_index = 1;
+		}
+	}
+	
 }
