@@ -1,16 +1,15 @@
 {
-  "name": "obj_Tile",
   "spriteId": {
     "name": "spr_tileTest",
     "path": "sprites/spr_tileTest/spr_tileTest.yy",
   },
-  "spriteMaskId": null,
-  "visible": true,
   "solid": false,
-  "persistent": false,
-  "physicsObject": false,
+  "visible": true,
   "managed": true,
+  "spriteMaskId": null,
+  "persistent": false,
   "parentObjectId": null,
+  "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
   "physicsGroup": 1,
@@ -30,6 +29,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
+  "name": "objTile",
   "tags": [],
   "resourceType": "GMObject",
 }
