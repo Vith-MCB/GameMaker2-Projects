@@ -19,6 +19,15 @@ movePlayer = function(){
 	
 	//Movimentation Logic
 	move = right - left;
+	
+	//Sprite rotation
+	while(left){
+		sprite_index = sPlayerWalk;
+		image_xscale *= -1;
+	} 
+	while (right){
+		sprite_index = sPlayerWalk;
+	}
 
 	//Horizontal speed
 	hsp = move * walksp;

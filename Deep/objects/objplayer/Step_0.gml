@@ -1,3 +1,4 @@
 //Moviment
 movePlayer();
 verticalMove();
+
