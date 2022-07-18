@@ -11,6 +11,8 @@ grv = 0.3;
 //Player Life
 playerLife = 3;
 
+//Facing
+facing = "right";
 
 //Movimentation function
 movePlayer = function(){
@@ -30,10 +32,13 @@ movePlayer = function(){
 		if(move > 0){
 			sprite_index = sPlayerWalk;
 			image_xscale = 4;
+			facing = "right";
+			
 		} 
 		else if(move < 0){
 			sprite_index = sPlayerWalk;
 			image_xscale = -4;
+			facing = "left";
 		}
 		else if(move == 0){
 			sprite_index = sPlayerStill;
@@ -46,10 +51,12 @@ movePlayer = function(){
 		if(move > 0){
 			sprite_index = sPlayerJump;
 			image_xscale = 4;
+			facing = "right";
 		} 
 		else if(move < 0){
 			sprite_index = sPlayerJump;
 			image_xscale = -4;
+			facing = "left";
 		}
 	}
 	
@@ -93,4 +100,56 @@ movePlayer = function(){
 		vsp = -7;
 	}
 	
+}
+
+///Taking Damage
+
+//Basic damage function
+tookHit = false;
+
+enableHit = true;
+
+damage = function(){
+	if(enableHit) //Time between hits taken by player
+	{
+		playerLife -= 1; //Player took damage
+		enableHit = false;
+		alarm[0] = room_speed/2;
+	}
+	tookHit = true;
+	
+	//Checking life
+	if(playerLife <= 0) //Checking if player life is less or equal to 0
+	{
+		state = "Dead"; //If so, player is dead
+	} else {
+		state = "Alive"; //Else, the player is alive
+	}
+	
+}
+
+//Recoil system (if player is hit)
+playerRecoil = -1;
+recoilSpeed = 5;
+
+pRecoil = function(){
+		if (tookHit){ 
+			playerRecoil=10; // activates and controls how long the recoil effect lasts for, reduce this if they fly too far
+			tookHit = false;
+		}
+
+		if(playerRecoil>-1){
+		    playerRecoil-=1;
+			if(facing = "right")//Check if the player is looking to the right
+			{
+				x -= 4; //Player goes to the left
+			} else if (facing = "left") /*Player is looking to the left*/{
+				x += 4;
+			}
+			vspeed -= 3;
+			speed = recoilSpeed;
+		}
+		else {
+			speed = 0;
+		}
 }
