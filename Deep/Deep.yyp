@@ -1,11 +1,19 @@
 {
   "resources": [
+    {"id":{"name":"objSlime","path":"objects/objSlime/objSlime.yy",},"order":0,},
     {"id":{"name":"sPlayerWalk","path":"sprites/sPlayerWalk/sPlayerWalk.yy",},"order":1,},
     {"id":{"name":"spr_tileTest","path":"sprites/spr_tileTest/spr_tileTest.yy",},"order":1,},
+    {"id":{"name":"sSlimeJump","path":"sprites/sSlimeJump/sSlimeJump.yy",},"order":1,},
     {"id":{"name":"objTile","path":"objects/objTile/objTile.yy",},"order":1,},
+    {"id":{"name":"sLife","path":"sprites/sLife/sLife.yy",},"order":3,},
+    {"id":{"name":"scrSlimeAttack","path":"scripts/scrSlimeAttack/scrSlimeAttack.yy",},"order":0,},
     {"id":{"name":"sPlayerStill","path":"sprites/sPlayerStill/sPlayerStill.yy",},"order":0,},
+    {"id":{"name":"sSlimeFall","path":"sprites/sSlimeFall/sSlimeFall.yy",},"order":2,},
     {"id":{"name":"sPlayerJump","path":"sprites/sPlayerJump/sPlayerJump.yy",},"order":2,},
     {"id":{"name":"objPlayer","path":"objects/objPlayer/objPlayer.yy",},"order":0,},
+    {"id":{"name":"sndJump","path":"sounds/sndJump/sndJump.yy",},"order":0,},
+    {"id":{"name":"sSlimeIdle","path":"sprites/sSlimeIdle/sSlimeIdle.yy",},"order":3,},
+    {"id":{"name":"sSlime","path":"sprites/sSlime/sSlime.yy",},"order":0,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "Options": [
@@ -39,6 +47,10 @@
     {"folderPath":"folders/Extensions.yy","order":14,"resourceVersion":"1.0","name":"Extensions","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/Player.yy","order":3,"resourceVersion":"1.0","name":"Player","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/Player.yy","order":2,"resourceVersion":"1.0","name":"Player","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Sounds/Player.yy","order":1,"resourceVersion":"1.0","name":"Player","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Objects/Enemys.yy","order":4,"resourceVersion":"1.0","name":"Enemys","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Sprites/Enemys.yy","order":4,"resourceVersion":"1.0","name":"Enemys","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Sprites/Enemys/Slime.yy","order":4,"resourceVersion":"1.0","name":"Slime","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},

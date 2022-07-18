@@ -1,4 +1,3 @@
 //Moviment
 movePlayer();
-verticalMove();
 
