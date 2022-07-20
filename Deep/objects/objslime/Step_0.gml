@@ -6,7 +6,7 @@ slimeCollision();
 //Image Speed
 switch (sprite_index){
 	case sSlimeIdle: image_speed = 1; break;
-	case sSlimeJump: image_speed = 2; break;
+	case sSlimeJump: image_speed = 1; break;
 	case sSlimeFall: image_speed = 1; break;
 }
 
@@ -66,3 +66,10 @@ if(grounded) // If the slime is grounded
 	}
 }
 
+//Recoil system
+eRecoil();
+
+//Reducing flash caused by taking damage
+if(flashAlpha > 0){
+	flashAlpha -= 0.05;
+}

@@ -15,10 +15,12 @@ function scrSlimeAttack(){
 	if(hsp < 0)//Slime looks to the left
 	{
 		image_xscale = -3;
+		facing = "left";
 	}
 	
 	else if(hsp > 0)//Slime looks to the right
 	{
 		image_xscale = 3;
+		facing = "right";
 	}
 }

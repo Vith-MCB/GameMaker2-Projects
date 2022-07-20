@@ -1,3 +1,7 @@
+//Shaders (Flash)
+flashAlpha = 0;
+flashColor = c_white;
+
 //Config player sprite
 image_xscale = 4;
 image_yscale = 4;
@@ -19,6 +23,7 @@ haveGun = false;
 
 //Mouse x position
 mouseXpos = 0;
+
 //Movimentation function
 movePlayer = function(){
 	//Movimentation
@@ -165,6 +170,8 @@ enableHit = true;
 damage = function(){
 	if (enableHit){
 		playerLife -= 1; //Player took damage
+		
+		flashAlpha = 1; //Making the player blink
 	}
 	tookHit = true;
 	
@@ -189,10 +196,6 @@ pRecoil = function(){
 			enableHit = false;
 			alarm[0] = room_speed;
 			
-			//Making the player blink red
-			storeBlend = image_blend;
-			image_blend = c_red;
-			alarm[1] = 5;
 		}
 		
 		tookHit = false; //Set it back to false
@@ -214,11 +217,20 @@ pRecoil = function(){
 		}
 }
 
-///Gun System
-
+///Gun get System
 getGun = function(){
-	if(place_meeting(x,y,oGun) && haveGun == false){
+	if(place_meeting(x,y,oGun) && haveGun == false &&
+	   keyboard_check_pressed(ord("E"))){ 
 		haveGun = true;
 		instance_destroy(oGun,false);
+	}
+}
+
+shot = function(){
+	var shot = mouse_check_button_pressed(mb_left);
+	if(haveGun && shot){
+		var shoot = instance_create_depth(x, y-40, depth + 1, oShot);
+		shoot.direction = dir;
+		shoot.image_angle = dir;
 	}
 }
