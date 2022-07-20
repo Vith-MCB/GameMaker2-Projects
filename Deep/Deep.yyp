@@ -8,6 +8,7 @@
     {"id":{"name":"sLife","path":"sprites/sLife/sLife.yy",},"order":3,},
     {"id":{"name":"scrSlimeAttack","path":"scripts/scrSlimeAttack/scrSlimeAttack.yy",},"order":0,},
     {"id":{"name":"sPlayerStill","path":"sprites/sPlayerStill/sPlayerStill.yy",},"order":0,},
+    {"id":{"name":"sGun","path":"sprites/sGun/sGun.yy",},"order":0,},
     {"id":{"name":"sSlimeFall","path":"sprites/sSlimeFall/sSlimeFall.yy",},"order":2,},
     {"id":{"name":"sPlayerJump","path":"sprites/sPlayerJump/sPlayerJump.yy",},"order":2,},
     {"id":{"name":"objPlayer","path":"objects/objPlayer/objPlayer.yy",},"order":0,},
@@ -51,6 +52,7 @@
     {"folderPath":"folders/Objects/Enemys.yy","order":4,"resourceVersion":"1.0","name":"Enemys","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/Enemys.yy","order":4,"resourceVersion":"1.0","name":"Enemys","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/Enemys/Slime.yy","order":4,"resourceVersion":"1.0","name":"Slime","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Sprites/Tools.yy","order":5,"resourceVersion":"1.0","name":"Tools","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},

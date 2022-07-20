@@ -110,11 +110,8 @@ tookHit = false;
 enableHit = true;
 
 damage = function(){
-	if(enableHit) //Time between hits taken by player
-	{
+	if (enableHit){
 		playerLife -= 1; //Player took damage
-		enableHit = false;
-		alarm[0] = room_speed/2;
 	}
 	tookHit = true;
 	
@@ -133,11 +130,21 @@ playerRecoil = -1;
 recoilSpeed = 5;
 
 pRecoil = function(){
-		if (tookHit){ 
+		if (tookHit && enableHit)//Time between hits taken by player
+		{ 
 			playerRecoil=10; // activates and controls how long the recoil effect lasts for, reduce this if they fly too far
-			tookHit = false;
+			enableHit = false;
+			alarm[0] = room_speed;
+			
+			//Making the player blink red
+			storeBlend = image_blend;
+			image_blend = c_red;
+			alarm[1] = 5;
 		}
+		
+		tookHit = false; //Set it back to false
 
+		//Player recoil system
 		if(playerRecoil>-1){
 		    playerRecoil-=1;
 			if(facing = "right")//Check if the player is looking to the right
