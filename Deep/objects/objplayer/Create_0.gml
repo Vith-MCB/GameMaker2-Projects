@@ -14,6 +14,11 @@ playerLife = 3;
 //Facing
 facing = "right";
 
+//Player dont have gun at the start
+haveGun = false;
+
+//Mouse x position
+mouseXpos = 0;
 //Movimentation function
 movePlayer = function(){
 	//Movimentation
@@ -26,37 +31,85 @@ movePlayer = function(){
 	//Movimentation Logic
 	move = right - left;
 	
-	//Sprite for jumping
-	if(place_meeting(x,y+1,objTile)){
-		//Sprite of movimentation and animation
-		if(move > 0){
-			sprite_index = sPlayerWalk;
-			image_xscale = 4;
-			facing = "right";
+	//Player looks to the mouse pos
+	if(mouseXpos > 0) //If mouse is at the right of the player
+	{
+		image_xscale = 4; //Player look to the right
+	}
+	if(mouseXpos < 0) //If mouse is ar the left of the player
+	{
+		image_xscale = -4; //Player look to the left
+	}
+	
+	//Player animation
+	if(!haveGun) //Sprite for player without gun
+	{
+		if(place_meeting(x,y+1,objTile)){
+			//Sprite of movimentation and animation
+			if(move > 0){
+				sprite_index = sPlayerWalk;
+				image_xscale = 4;
+				facing = "right";
 			
-		} 
-		else if(move < 0){
-			sprite_index = sPlayerWalk;
-			image_xscale = -4;
-			facing = "left";
-		}
-		else if(move == 0){
-			sprite_index = sPlayerStill;
-		}
+			} 
+			else if(move < 0){
+				sprite_index = sPlayerWalk;
+				image_xscale = -4;
+				facing = "left";
+			}
+			else if(move == 0){
+				sprite_index = sPlayerStill;
+			}
 
-	} else {
-		//Sprite of movimentation and animation
-		sprite_index = sPlayerJump;
+		} else {
+			//Sprite of movimentation and animation
+			sprite_index = sPlayerJump;
 		
-		if(move > 0){
-			sprite_index = sPlayerJump;
-			image_xscale = 4;
-			facing = "right";
-		} 
-		else if(move < 0){
-			sprite_index = sPlayerJump;
-			image_xscale = -4;
-			facing = "left";
+			if(move > 0){
+				sprite_index = sPlayerJump;
+				image_xscale = 4;
+				facing = "right";
+			} 
+			else if(move < 0){
+				sprite_index = sPlayerJump;
+				image_xscale = -4;
+				facing = "left";
+			}
+		}
+	}
+	else //Player have gun
+	{
+		if(place_meeting(x,y+1,objTile)){
+			//Sprite of movimentation and animation
+			if(move > 0){
+				sprite_index = sPlayerWalkGun;
+				image_xscale = 4;
+				facing = "right";
+			
+			} 
+			else if(move < 0){
+				sprite_index = sPlayerWalkGun;
+				image_xscale = -4;
+				facing = "left";
+			}
+			else if(move == 0){
+				sprite_index = sPlayerStillGun;
+			}
+
+		} else {
+			//Sprite of movimentation and animation
+			sprite_index = sPlayerJumpGun;
+		
+			if(move > 0){
+				sprite_index = sPlayerJumpGun;
+				image_xscale = 4;
+				facing = "right";
+			} 
+			else if(move < 0){
+				sprite_index = sPlayerJumpGun;
+				image_xscale = -4;
+				facing = "left";
+			}
 		}
 	}
 	
@@ -159,4 +212,13 @@ pRecoil = function(){
 		else {
 			speed = 0;
 		}
+}
+
+///Gun System
+
+getGun = function(){
+	if(place_meeting(x,y,oGun) && haveGun == false){
+		haveGun = true;
+		instance_destroy(oGun,false);
+	}
 }
