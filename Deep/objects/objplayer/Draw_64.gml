@@ -24,26 +24,27 @@ if(flashAlpha > 0){
 }
 
 
-/* 
-* Gun show system, it shows a gun that point at mouse direction
+
+//Gun show system, it shows a gun that point at mouse direction
 if(haveGun){
-	yPos = y-30;
+	yPos = y-35;
+	xPosR = x+40;
+	xPosL = x-40;
 	xScale = 3;
 	yScale = 3;
 	
 	dir = point_direction(x,y,mouse_x, mouse_y);	
 
 	if(dir < 90){
-		draw_sprite_ext(sGun,0,x,yPos,xScale,yScale,dir,image_blend,image_alpha);
+		draw_sprite_ext(sGun,0,xPosR,yPos,xScale,yScale,dir,image_blend,image_alpha);
 	}
 	if(dir >= 90 && dir <= 180){
-		draw_sprite_ext(sGun,0,x,yPos,xScale,-yScale,dir,image_blend,image_alpha);
+		draw_sprite_ext(sGun,0,xPosL,yPos,xScale,-yScale,dir,image_blend,image_alpha);
 	}
 	if(dir >=180 && dir <= 270){
-		draw_sprite_ext(sGun,0,x,yPos,xScale,-yScale,dir,image_blend,image_alpha);
+		draw_sprite_ext(sGun,0,xPosL,yPos,xScale,-yScale,dir,image_blend,image_alpha);
 	}
 	if(dir >=270 && dir <= 360){
-		draw_sprite_ext(sGun,0,x,yPos,xScale,yScale,dir,image_blend,image_alpha);
+		draw_sprite_ext(sGun,0,xPosR,yPos,xScale,yScale,dir,image_blend,image_alpha);
 	}
 }
-*/

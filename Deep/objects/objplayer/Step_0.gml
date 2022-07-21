@@ -42,3 +42,4 @@ if(place_meeting(x,y,oGun)){
 dir = point_direction(x,y,mouse_x, mouse_y);
 
 shot();
+

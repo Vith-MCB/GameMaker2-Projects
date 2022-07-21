@@ -5,6 +5,7 @@ flashColor = c_white;
 //Config player sprite
 image_xscale = 4;
 image_yscale = 4;
+depth = 0;
 
 //Variables
 hsp = 0;
@@ -24,6 +25,9 @@ haveGun = false;
 //Mouse x position
 mouseXpos = 0;
 
+//Bad shot if shot backwards
+badShot = false;
+
 //Movimentation function
 movePlayer = function(){
 	//Movimentation
@@ -33,12 +37,12 @@ movePlayer = function(){
 	left = keyboard_check(ord("A"));
 	right = keyboard_check(ord("D"));
 	
-	//Movimentation Logic
+	///Animation logic of move
 	move = right - left;
 	
 	//Player looks to the mouse pos
 	if(mouseXpos > 0) //If mouse is at the right of the player
-	{
+	{	
 		image_xscale = 4; //Player look to the right
 	}
 	if(mouseXpos < 0) //If mouse is ar the left of the player
@@ -86,32 +90,47 @@ movePlayer = function(){
 	{
 		if(place_meeting(x,y+1,objTile)){
 			//Sprite of movimentation and animation
-			if(move > 0){
-				sprite_index = sPlayerWalkGun;
+			if(move > 0 && mouseXpos > 0){
+				sprite_index = sPlayerWalkGunNew;
 				image_xscale = 4;
 				facing = "right";
+				badShot = false;
 			
 			} 
-			else if(move < 0){
-				sprite_index = sPlayerWalkGun;
+			if(move > 0 && mouseXpos < 0){
+				sprite_index = sPlayerWalkGunBack;
+				image_xscale = 4;
+				facing = "right";
+				badShot = true;
+			}
+			if(move < 0 && mouseXpos > 0){
+				sprite_index = sPlayerWalkGunBack;
 				image_xscale = -4;
 				facing = "left";
+				badShot = true;
+			}
+			if(move < 0 && mouseXpos < 0){
+				sprite_index = sPlayerWalkGunNew;
+				image_xscale = -4;
+				facing = "left";
+				badShot = false;
 			}
 			else if(move == 0){
-				sprite_index = sPlayerStillGun;
+				sprite_index = sPlayerStillGunNew;
 			}
+			
 
 		} else {
 			//Sprite of movimentation and animation
-			sprite_index = sPlayerJumpGun;
+			sprite_index = sPlayerJumpGunNew;
 		
 			if(move > 0){
-				sprite_index = sPlayerJumpGun;
+				sprite_index = sPlayerJumpGunNew;
 				image_xscale = 4;
 				facing = "right";
 			} 
 			else if(move < 0){
-				sprite_index = sPlayerJumpGun;
+				sprite_index = sPlayerJumpGunNew;
 				image_xscale = -4;
 				facing = "left";
 			}
@@ -229,7 +248,12 @@ getGun = function(){
 shot = function(){
 	var shot = mouse_check_button_pressed(mb_left);
 	if(haveGun && shot){
-		var shoot = instance_create_depth(x, y-40, depth + 1, oShot);
+		if(mouseXpos > 0){
+			var shoot = instance_create_layer(xPosR, yPos-5,"Player",oShot);
+		}
+		if(mouseXpos < 0){
+			var shoot = instance_create_layer(xPosL, yPos-5,"Player",oShot);
+		}
 		shoot.direction = dir;
 		shoot.image_angle = dir;
 	}
