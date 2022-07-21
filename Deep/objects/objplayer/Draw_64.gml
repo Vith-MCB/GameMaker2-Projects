@@ -23,7 +23,8 @@ if(flashAlpha > 0){
 	shader_reset();
 }
 
-
+//Bullets show system
+draw_text(mouse_x-5, mouse_y+30,string(atualBullets));
 
 //Gun show system, it shows a gun that point at mouse direction
 if(haveGun){

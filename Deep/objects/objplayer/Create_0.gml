@@ -45,10 +45,12 @@ movePlayer = function(){
 	//Player looks to the mouse pos
 	if(mouseXpos > 0) //If mouse is at the right of the player
 	{	
+		facing = "right";
 		image_xscale = 4; //Player look to the right
 	}
 	if(mouseXpos < 0) //If mouse is ar the left of the player
 	{
+		facing = "left";
 		image_xscale = -4; //Player look to the left
 	}
 	
@@ -97,27 +99,32 @@ movePlayer = function(){
 				image_xscale = 4;
 				facing = "right";
 				badShot = false;
+				running = true;
 			} 
 			if(move > 0 && mouseXpos < 0){
 				sprite_index = sPlayerWalkGunBack;
 				image_xscale = 4;
 				facing = "right";
 				badShot = true;
+				running = true;
 			}
 			if(move < 0 && mouseXpos > 0){
 				sprite_index = sPlayerWalkGunBack;
 				image_xscale = -4;
 				facing = "left";
 				badShot = true;
+				running = true;
 			}
 			if(move < 0 && mouseXpos < 0){
 				sprite_index = sPlayerWalkGunNew;
 				image_xscale = -4;
 				facing = "left";
 				badShot = false;
+				running = true;
 			}
 			else if(move == 0){
 				sprite_index = sPlayerStillGunNew;
+				running = false;
 			}
 			
 
@@ -238,25 +245,32 @@ pRecoil = function(){
 }
 
 ///Gun get System
-getGun = function(){
+gotPistol = false;
+getGunPistol = function(){
 	if(place_meeting(x,y,oGun) && haveGun == false &&
 	   keyboard_check_pressed(ord("E"))){ 
 		haveGun = true;
+		oControl.gotPistol = true;
 		instance_destroy(oGun,false);
 	}
 }
 
-/*Shot function
+atualBullets = 0;
 
-bullets = 0;
-if(instance_exists(oGun)) //If obj gun exists
-{ bullets = oGun.bullets; }
-*/
+//Reload function
+reload = function(){
+	if(keyboard_check_pressed(ord("R")) && haveGun){
+		atualBullets = global.Bullets;
+	}
+}
+
+//Shot function
 shot = function(){
 	var shot = mouse_check_button_pressed(mb_left); // Check left click
-	if(haveGun && shot /*&& bullets > 0*/) // If player have the gun and shots
+	
+	if(haveGun && shot && atualBullets > 0) // If player have the gun and shots
 	{
-		//bullets -= 1;
+		atualBullets -= 1;
 		// Checking mouse position to shot
 		if(mouseXpos > 0) 
 		{
@@ -270,15 +284,44 @@ shot = function(){
 		// Determining the shot direction
 		
 		
-		if(badShot)// If player is aiming at a different direction 
+		if(badShot == true)// If player is aiming at a different direction 
 		{
-			//Gap of error (7%) 
-			error = random_range(1.07,0.93);
-			shoot.direction = dir * error;
+			//Gap of error (3%) 
+			error = random_range(1.03,0.97);
+			if(dir>90){shoot.direction = dir * error;}
+			else{shoot.direction = dir * (error+choose(0.2,-0.2));}
 		} 
-		else // if player is aiming to the same direction that it's running
+		else if (badShot == false && running == true) // if player is aiming to the same direction that it's running
 		{
-			shoot.direction = dir;
+			//Gap of error (1% up) (3% down)
+			error = random_range(1.01,0.97);
+			shoot.direction = dir * error;
+		}
+		else if (!badShot && running == false) // if the player is still
+		{
+			///Adjusting the direction of the shot angle
+			if(dir < 45){
+				shoot.direction = dir - 5;
+			}
+			if(dir >= 45 && dir <= 90){
+				shoot.direction = dir + 5;
+			}
+			if(dir >= 90 && dir <= 135){
+				shoot.direction = dir - 5;
+			}
+			if(dir >= 135 && dir <= 180){
+				shoot.direction = dir + 5;
+			}
+			if(dir >=180 && dir <= 225){
+				shoot.direction = dir + 5;
+			}
+			if(dir >=225 && dir <= 270){
+				shoot.direction = dir + 5;
+			}
+			if(dir >=270 && dir <= 360){
+				shoot.direction = dir - 5;
+			}
+			//The angles can be changed to better directions
 		}
 	}
 }

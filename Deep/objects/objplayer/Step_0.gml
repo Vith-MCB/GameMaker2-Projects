@@ -10,7 +10,7 @@ if(flashAlpha > 0){
 
 ///Gun system
 //Function to destroy gun after taking it
-getGun();
+getGunPistol();
 
 //Mouse position
 mouseXpos = sign(mouse_x-x);
@@ -28,6 +28,7 @@ if(keyboard_check_pressed(ord("Q")) && haveGun){
 		dropGun.vsp = -4;
 		dropGun.hsp = -4;
 	}
+	oGun.create(atualBullets);
 	haveGun = false;
 }
 
@@ -41,7 +42,10 @@ if(place_meeting(x,y,oGun)){
 //Pointing to mouse
 dir = point_direction(x,y,mouse_x, mouse_y);
 
+///Shot system
 shot();
+reload();
 
-show_debug_message(badShot);
+
+//show_debug_message(global.Bullets);
 

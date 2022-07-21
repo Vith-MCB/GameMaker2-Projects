@@ -3,7 +3,11 @@ image_xscale = 3;
 image_yscale = 3;
 
 //Bullets
-bullets = 6;
+
+bullets = 0;
+create = function(bulletsNum){
+	bullets = bulletsNum;
+}
 
 ///Gravity and collisions
 //Variables
