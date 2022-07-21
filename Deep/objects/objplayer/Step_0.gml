@@ -43,3 +43,5 @@ dir = point_direction(x,y,mouse_x, mouse_y);
 
 shot();
 
+show_debug_message(badShot);
+

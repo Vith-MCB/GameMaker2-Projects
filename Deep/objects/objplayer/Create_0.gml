@@ -1,3 +1,5 @@
+randomize();
+
 //Shaders (Flash)
 flashAlpha = 0;
 flashColor = c_white;
@@ -95,7 +97,6 @@ movePlayer = function(){
 				image_xscale = 4;
 				facing = "right";
 				badShot = false;
-			
 			} 
 			if(move > 0 && mouseXpos < 0){
 				sprite_index = sPlayerWalkGunBack;
@@ -245,16 +246,39 @@ getGun = function(){
 	}
 }
 
+/*Shot function
+
+bullets = 0;
+if(instance_exists(oGun)) //If obj gun exists
+{ bullets = oGun.bullets; }
+*/
 shot = function(){
-	var shot = mouse_check_button_pressed(mb_left);
-	if(haveGun && shot){
-		if(mouseXpos > 0){
+	var shot = mouse_check_button_pressed(mb_left); // Check left click
+	if(haveGun && shot /*&& bullets > 0*/) // If player have the gun and shots
+	{
+		//bullets -= 1;
+		// Checking mouse position to shot
+		if(mouseXpos > 0) 
+		{
 			var shoot = instance_create_layer(xPosR, yPos-5,"Player",oShot);
 		}
 		if(mouseXpos < 0){
 			var shoot = instance_create_layer(xPosL, yPos-5,"Player",oShot);
 		}
-		shoot.direction = dir;
-		shoot.image_angle = dir;
+		shoot.image_angle = dir; // image angled at the right direction;
+		
+		// Determining the shot direction
+		
+		
+		if(badShot)// If player is aiming at a different direction 
+		{
+			//Gap of error (7%) 
+			error = random_range(1.07,0.93);
+			shoot.direction = dir * error;
+		} 
+		else // if player is aiming to the same direction that it's running
+		{
+			shoot.direction = dir;
+		}
 	}
 }
