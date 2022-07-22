@@ -278,7 +278,7 @@ reload = function(){
 	}
 	
 	//Reload recomendation
-	if(atualBullets < (global.Bullets/3) && haveGun){reloadRecomended = true;}
+	if(atualBullets < (global.Bullets/2) && haveGun){reloadRecomended = true;}
 }
 
 
@@ -303,7 +303,7 @@ shot = function(){
 			var shoot = instance_create_layer(xPosL, yPos-5,"Player",oShot);
 			
 			//Creating the bullet shell
-			var bShell = instance_create_layer(xPosR,yPos-5,"Player",oBulletShell);
+			var bShell = instance_create_layer(xPosL,yPos-5,"Player",oBulletShell);
 			bShell.vsp = choose(-8,-6,-8.5,-7);
 			bShell.hsp = choose(6,5,4,3,2,1,0,-1,-2,-3);
 		}
