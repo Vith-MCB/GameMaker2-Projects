@@ -1,4 +1,5 @@
 randomize();
+teste = 0;
 
 //Shaders (Flash)
 flashAlpha = 0;
@@ -245,6 +246,10 @@ pRecoil = function(){
 }
 
 ///Gun get System
+drawE = false;
+
+//Get gun
+buttonImageIndex = 0;
 gotPistol = false;
 getGunPistol = function(){
 	if(place_meeting(x,y,oGun) && haveGun == false &&
@@ -258,11 +263,24 @@ getGunPistol = function(){
 atualBullets = 0;
 
 //Reload function
-reload = function(){
-	if(keyboard_check_pressed(ord("R")) && haveGun){
-		atualBullets = global.Bullets;
-	}
+reloadRecomended = false;
+//Gun related buttons
+buttonsDisplay = function(){
+	if(reloadRecomended || drawE){alarm[1]= room_speed;}
 }
+
+reload = function(){
+	if(keyboard_check_pressed(ord("R")) && haveGun && atualBullets < global.Bullets){
+		audio_play_sound(sndReload,1,0);
+		alarm[2] = 5;
+		//Buttons display
+		buttonsDisplay();
+	}
+	
+	//Reload recomendation
+	if(atualBullets < (global.Bullets/3) && haveGun){reloadRecomended = true;}
+}
+
 
 //Shot function
 shot = function(){
@@ -275,9 +293,19 @@ shot = function(){
 		if(mouseXpos > 0) 
 		{
 			var shoot = instance_create_layer(xPosR, yPos-5,"Player",oShot);
+			
+			//Creating the bullet shell
+			var bShell = instance_create_layer(xPosR,yPos-5,"Player",oBulletShell);
+			bShell.vsp = choose(-8,-6,-8.5,-7);
+			bShell.hsp = choose(-6,-5,-4,-3,-2,-1,0,1,2,3);
 		}
 		if(mouseXpos < 0){
 			var shoot = instance_create_layer(xPosL, yPos-5,"Player",oShot);
+			
+			//Creating the bullet shell
+			var bShell = instance_create_layer(xPosR,yPos-5,"Player",oBulletShell);
+			bShell.vsp = choose(-8,-6,-8.5,-7);
+			bShell.hsp = choose(6,5,4,3,2,1,0,-1,-2,-3);
 		}
 		shoot.image_angle = dir; // image angled at the right direction;
 		
@@ -288,14 +316,15 @@ shot = function(){
 		{
 			//Gap of error (3%) 
 			error = random_range(1.03,0.97);
-			if(dir>90){shoot.direction = dir * error;}
-			else{shoot.direction = dir * (error+choose(0.2,-0.2));}
+			if(dir>=35){shoot.direction = dir * error;}
+			else if (dir<35){shoot.direction = dir * (error+choose(0.5,-0.5));}
 		} 
 		else if (badShot == false && running == true) // if player is aiming to the same direction that it's running
 		{
 			//Gap of error (1% up) (3% down)
 			error = random_range(1.01,0.97);
-			shoot.direction = dir * error;
+			if(dir>=35){shoot.direction = dir * error;}
+			else if (dir<35){shoot.direction = dir * (error+choose(0.5,-0.5));}
 		}
 		else if (!badShot && running == false) // if the player is still
 		{

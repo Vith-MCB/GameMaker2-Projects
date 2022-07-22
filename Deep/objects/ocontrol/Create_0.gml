@@ -10,3 +10,4 @@ global.Bullets = 0;
 bulletNumber = function(){
 	if(gotPistol){global.Bullets = 6;}//Pistol bullets
 }
+

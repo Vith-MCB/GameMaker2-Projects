@@ -28,16 +28,20 @@ if(keyboard_check_pressed(ord("Q")) && haveGun){
 		dropGun.vsp = -4;
 		dropGun.hsp = -4;
 	}
-	oGun.create(atualBullets);
+	oGun.create(atualBullets); // making sure the gun dropped will have the same number of bullets tha
 	haveGun = false;
 }
+
 
 //Check if player is next to the gun
 if(place_meeting(x,y,oGun)){
 	drawE = true;
+	//Buttons display
+	buttonsDisplay();
 } else {
 	drawE = false;
 }
+
 
 //Pointing to mouse
 dir = point_direction(x,y,mouse_x, mouse_y);
@@ -46,6 +50,4 @@ dir = point_direction(x,y,mouse_x, mouse_y);
 shot();
 reload();
 
-
-//show_debug_message(global.Bullets);
 

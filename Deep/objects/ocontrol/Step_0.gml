@@ -13,5 +13,3 @@ if(objPlayer.haveGun == false) //if player don't have gun
 
 ///Number of shots depending on the gun
 bulletNumber();
-
-show_debug_message(gotPistol);
