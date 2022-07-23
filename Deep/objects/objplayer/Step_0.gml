@@ -1,11 +1,14 @@
 //Moviment
 movePlayer();
 
+//Recoil
 pRecoil();
 
-//Reducing flash caused by taking damage
+//Reducing flash caused by taking damage 
+//If the flash animation ends, the player will be able to take damage
 if(flashAlpha > 0){
-	flashAlpha -= 0.05;
+	flashAlpha -= 0.03;
+	if(flashAlpha <= 0){enableHit = true;}
 }
 
 ///Gun system
@@ -33,15 +36,17 @@ if(keyboard_check_pressed(ord("Q")) && haveGun){
 }
 
 
-//Check if player is next to the gun
-if(place_meeting(x,y,oGun)){
-	drawE = true;
-	//Buttons display
-	buttonsDisplay();
-} else {
-	drawE = false;
+//Check if player is next to the gun (if the instance exists)
+if(instance_exists(oGun)){
+	if(place_meeting(x,y,oGun)){
+		drawE = true;
+		//Buttons display
+		buttonsDisplay();
+	} else {drawE = false; alarm[1]=-1;}
 }
 
+
+if(alarm[1] <= room_speed/2){buttonImageIndex = 0};
 
 //Pointing to mouse
 dir = point_direction(x,y,mouse_x, mouse_y);
@@ -50,4 +55,4 @@ dir = point_direction(x,y,mouse_x, mouse_y);
 shot();
 reload();
 
-
+show_debug_message(alarm[1]);

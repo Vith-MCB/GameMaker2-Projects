@@ -1,5 +1,4 @@
-randomize();
-teste = 0;
+randomize(); // Function used to ensure random values
 
 //Shaders (Flash)
 flashAlpha = 0;
@@ -10,28 +9,27 @@ image_xscale = 4;
 image_yscale = 4;
 depth = 0;
 
-//Variables
-hsp = 0;
-vsp = 0;
-walksp = 4;
-grv = 0.3;
+///Variables
+hsp = 0; // Horizontal Speed
+vsp = 0; // Vertical Speed
+walksp = 4; // Walk Speed
+grv = 0.3; // Gravity
+playerLife = 3; // Player Life
+facing = "right"; // Direction that the player is facing
+haveGun = false; // Player dont have gun at the start
+mouseXpos = 0; // Mouse x position
+badShot = false; // Bad shot if shot backwards
+enableHit = true; // Variable used to determine if player can take damage
+tookHit = false; // Player took damage
+playerRecoil = -1; // Player recoil
+recoilSpeed = 5; // Velocity of the recoil that will be applied to player
+drawE = false; // Variable used to draw the "E" button sprite
+gotPistol = false; // Used to determine if player got the pistol objects
+atualBullets = 0; // Bullets ammount that player have
+reloadRecomended = false; // Variable used to determine if player needs to reload
 
-//Player Life
-playerLife = 3;
 
-//Facing
-facing = "right";
-
-//Player dont have gun at the start
-haveGun = false;
-
-//Mouse x position
-mouseXpos = 0;
-
-//Bad shot if shot backwards
-badShot = false;
-
-//Movimentation function
+///Movimentation function
 movePlayer = function(){
 	//Movimentation
 	var left, right, move;
@@ -163,7 +161,6 @@ movePlayer = function(){
 
 	//Vertical move
 	var jump = keyboard_check_pressed(vk_space);
-	
 	//Vertical speed
 	vsp += grv;
 	
@@ -180,7 +177,6 @@ movePlayer = function(){
 	y += vsp;
 	
 	//Jump
-	
 	if(jump && place_meeting(x,y+1,objTile)){
 		audio_play_sound(sndJump,1,false);
 		vsp = -7;
@@ -188,13 +184,7 @@ movePlayer = function(){
 	
 }
 
-///Taking Damage
-
 //Basic damage function
-tookHit = false;
-
-enableHit = true;
-
 damage = function(){
 	if (enableHit){
 		playerLife -= 1; //Player took damage
@@ -214,16 +204,11 @@ damage = function(){
 }
 
 //Recoil system (if player is hit)
-playerRecoil = -1;
-recoilSpeed = 5;
-
 pRecoil = function(){
 		if (tookHit && enableHit)//Time between hits taken by player
 		{ 
 			playerRecoil=10; // activates and controls how long the recoil effect lasts for, reduce this if they fly too far
 			enableHit = false;
-			alarm[0] = room_speed;
-			
 		}
 		
 		tookHit = false; //Set it back to false
@@ -246,11 +231,9 @@ pRecoil = function(){
 }
 
 ///Gun get System
-drawE = false;
+buttonImageIndex = 0; // WORKING IN PROGRESS
 
 //Get gun
-buttonImageIndex = 0;
-gotPistol = false;
 getGunPistol = function(){
 	if(place_meeting(x,y,oGun) && haveGun == false &&
 	   keyboard_check_pressed(ord("E"))){ 
@@ -259,28 +242,33 @@ getGunPistol = function(){
 		instance_destroy(oGun,false);
 	}
 }
-
-atualBullets = 0;
-
-//Reload function
-reloadRecomended = false;
 //Gun related buttons
 buttonsDisplay = function(){
-	if(reloadRecomended || drawE){alarm[1]= room_speed;}
+	if(reloadRecomended || drawE){
+			if(alarm[1] = -1){alarm[1]= room_speed;}
+		}
 }
-
+	
+///Reload function
 reload = function(){
 	if(keyboard_check_pressed(ord("R")) && haveGun && atualBullets < global.Bullets){
 		audio_play_sound(sndReload,1,0);
 		alarm[2] = 5;
-		//Buttons display
-		buttonsDisplay();
+		
 	}
 	
 	//Reload recomendation
-	if(atualBullets < (global.Bullets/2) && haveGun){reloadRecomended = true;}
-}
+	if(atualBullets < (global.Bullets/2) && haveGun){
+			reloadRecomended = true;
+			//Buttons display
+			buttonsDisplay();
+	} 
+	else if(atualBullets > (global.Bullets/2) && haveGun){
+		reloadRecomended = false;
+		alarm[1]=-1;
+	}
 
+}
 
 //Shot function
 shot = function(){
@@ -289,8 +277,9 @@ shot = function(){
 	if(haveGun && shot && atualBullets > 0) // If player have the gun and shots
 	{
 		atualBullets -= 1;
-		// Checking mouse position to shot
-		if(mouseXpos > 0) 
+		
+		/// Checking mouse position to shot
+		if(mouseXpos > 0) //Creating shot and the bullet shell to the right.
 		{
 			var shoot = instance_create_layer(xPosR, yPos-5,"Player",oShot);
 			
@@ -299,7 +288,8 @@ shot = function(){
 			bShell.vsp = choose(-8,-6,-8.5,-7);
 			bShell.hsp = choose(-6,-5,-4,-3,-2,-1,0,1,2,3);
 		}
-		if(mouseXpos < 0){
+		if(mouseXpos < 0)//Creating shot and the bullet shell to the left.
+		{
 			var shoot = instance_create_layer(xPosL, yPos-5,"Player",oShot);
 			
 			//Creating the bullet shell
@@ -310,8 +300,6 @@ shot = function(){
 		shoot.image_angle = dir; // image angled at the right direction;
 		
 		// Determining the shot direction
-		
-		
 		if(badShot == true)// If player is aiming at a different direction 
 		{
 			//Gap of error (3%) 
@@ -329,27 +317,13 @@ shot = function(){
 		else if (!badShot && running == false) // if the player is still
 		{
 			///Adjusting the direction of the shot angle
-			if(dir < 45){
-				shoot.direction = dir - 5;
-			}
-			if(dir >= 45 && dir <= 90){
-				shoot.direction = dir + 5;
-			}
-			if(dir >= 90 && dir <= 135){
-				shoot.direction = dir - 5;
-			}
-			if(dir >= 135 && dir <= 180){
-				shoot.direction = dir + 5;
-			}
-			if(dir >=180 && dir <= 225){
-				shoot.direction = dir + 5;
-			}
-			if(dir >=225 && dir <= 270){
-				shoot.direction = dir + 5;
-			}
-			if(dir >=270 && dir <= 360){
-				shoot.direction = dir - 5;
-			}
+			if(dir < 45){shoot.direction = dir - 5;}
+			if(dir >= 45 && dir <= 90){shoot.direction = dir + 5;}
+			if(dir >= 90 && dir <= 135){shoot.direction = dir - 5;}
+			if(dir >= 135 && dir <= 180){shoot.direction = dir + 5;}
+			if(dir >=180 && dir <= 225){shoot.direction = dir + 5;}
+			if(dir >=225 && dir <= 270){shoot.direction = dir + 5;}
+			if(dir >=270 && dir <= 360){shoot.direction = dir - 5;}
 			//The angles can be changed to better directions
 		}
 	}
