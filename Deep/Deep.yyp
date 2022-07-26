@@ -1,5 +1,6 @@
 {
   "resources": [
+    {"id":{"name":"sAssetsBack","path":"sprites/sAssetsBack/sAssetsBack.yy",},"order":0,},
     {"id":{"name":"sndReload","path":"sounds/sndReload/sndReload.yy",},"order":3,},
     {"id":{"name":"sScopeGun","path":"sprites/sScopeGun/sScopeGun.yy",},"order":0,},
     {"id":{"name":"sBulletShell","path":"sprites/sBulletShell/sBulletShell.yy",},"order":3,},
@@ -18,8 +19,10 @@
     {"id":{"name":"scrSlimeAttack","path":"scripts/scrSlimeAttack/scrSlimeAttack.yy",},"order":0,},
     {"id":{"name":"oBulletShell","path":"objects/oBulletShell/oBulletShell.yy",},"order":0,},
     {"id":{"name":"sPlayerStill","path":"sprites/sPlayerStill/sPlayerStill.yy",},"order":0,},
+    {"id":{"name":"sCback","path":"sprites/sCback/sCback.yy",},"order":2,},
     {"id":{"name":"sPlayerJumpGunNew","path":"sprites/sPlayerJumpGunNew/sPlayerJumpGunNew.yy",},"order":3,},
     {"id":{"name":"sndShot","path":"sounds/sndShot/sndShot.yy",},"order":2,},
+    {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},"order":7,},
     {"id":{"name":"sGun","path":"sprites/sGun/sGun.yy",},"order":0,},
     {"id":{"name":"oControl","path":"objects/oControl/oControl.yy",},"order":6,},
     {"id":{"name":"sEbutton","path":"sprites/sEbutton/sEbutton.yy",},"order":1,},
@@ -75,6 +78,7 @@
     {"folderPath":"folders/Sprites/Player/GunEquiped.yy","order":4,"resourceVersion":"1.0","name":"GunEquiped","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/Screen.yy","order":6,"resourceVersion":"1.0","name":"Screen","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/Tools/Shot Particle.yy","order":2,"resourceVersion":"1.0","name":"Shot Particle","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Sprites/Screen/Backgroud.yy","order":6,"resourceVersion":"1.0","name":"Backgroud","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},

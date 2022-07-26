@@ -15,9 +15,6 @@ if(flashAlpha > 0){
 //Function to destroy gun after taking it
 getGunPistol();
 
-//Mouse position
-mouseXpos = sign(mouse_x-x);
-
 //Drop gun
 if(keyboard_check_pressed(ord("Q")) && haveGun){
 	if(mouseXpos > 0){
@@ -49,10 +46,14 @@ if(instance_exists(oGun)){
 if(alarm[1] <= room_speed/2){buttonImageIndex = 0};
 
 //Pointing to mouse
-dir = point_direction(x,y,mouse_x, mouse_y);
+wx = window_mouse_get_x();
+wy = window_mouse_get_y();
+dir = point_direction(x,y,wx, wy);
+
+//Mouse position
+mouseXpos = sign(wx-x);
 
 ///Shot system
 shot();
 reload();
 
-show_debug_message(alarm[1]);

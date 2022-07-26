@@ -10,7 +10,6 @@ repeat(playerLife){
 	Xlife += 45;
 }
 
-
 //Flash by took damage
 draw_self();
 
@@ -23,9 +22,6 @@ if(flashAlpha > 0){
 	shader_reset();
 }
 
-//Bullets show system
-draw_text(mouse_x-5, mouse_y+30,string(atualBullets));
-
 //Gun show system, it shows a gun that point at mouse direction
 if(haveGun){
 	yPos = y-35;
@@ -34,7 +30,11 @@ if(haveGun){
 	xScale = 3;
 	yScale = 3;
 	
-	dir = point_direction(x,y,mouse_x, mouse_y);	
+	//Bullets show system
+	draw_sprite_ext(sGun,0,35,75,xScale,yScale, image_angle,image_blend,image_alpha);
+	var actBullets = string(atualBullets) + "/" + string(global.Bullets);
+	draw_text(80, 70, actBullets);
+	
 
 	if(dir < 90){
 		draw_sprite_ext(sGun,0,xPosR,yPos,xScale,yScale,dir,image_blend,image_alpha);

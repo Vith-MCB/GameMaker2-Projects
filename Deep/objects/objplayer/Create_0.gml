@@ -7,7 +7,6 @@ flashColor = c_white;
 //Config player sprite
 image_xscale = 4;
 image_yscale = 4;
-depth = 0;
 
 ///Variables
 hsp = 0; // Horizontal Speed
@@ -27,6 +26,7 @@ drawE = false; // Variable used to draw the "E" button sprite
 gotPistol = false; // Used to determine if player got the pistol objects
 atualBullets = 0; // Bullets ammount that player have
 reloadRecomended = false; // Variable used to determine if player needs to reload
+buttonImageIndex = 0; ///Gun get System
 
 
 ///Movimentation function
@@ -230,8 +230,6 @@ pRecoil = function(){
 		}
 }
 
-///Gun get System
-buttonImageIndex = 0; // WORKING IN PROGRESS
 
 //Get gun
 getGunPistol = function(){
