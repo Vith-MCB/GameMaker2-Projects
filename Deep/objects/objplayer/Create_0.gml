@@ -13,10 +13,7 @@ hsp = 0; // Horizontal Speed
 vsp = 0; // Vertical Speed
 walksp = 4; // Walk Speed
 grv = 0.3; // Gravity
-playerLife = 3; // Player Life
 facing = "right"; // Direction that the player is facing
-haveGun = false; // Player dont have gun at the start
-mouseXpos = 0; // Mouse x position
 badShot = false; // Bad shot if shot backwards
 enableHit = true; // Variable used to determine if player can take damage
 tookHit = false; // Player took damage
@@ -42,19 +39,19 @@ movePlayer = function(){
 	move = right - left;
 	
 	//Player looks to the mouse pos
-	if(mouseXpos > 0) //If mouse is at the right of the player
+	if(global.mouseXpos > 0) //If mouse is at the right of the player
 	{	
 		facing = "right";
 		image_xscale = 4; //Player look to the right
 	}
-	if(mouseXpos < 0) //If mouse is ar the left of the player
+	if(global.mouseXpos < 0) //If mouse is ar the left of the player
 	{
 		facing = "left";
 		image_xscale = -4; //Player look to the left
 	}
 	
 	//Player animation
-	if(!haveGun) //Sprite for player without gun
+	if(!global.haveGun) //Sprite for player without gun
 	{
 		if(place_meeting(x,y+1,objTile)){
 			//Sprite of movimentation and animation
@@ -93,28 +90,28 @@ movePlayer = function(){
 	{
 		if(place_meeting(x,y+1,objTile)){
 			//Sprite of movimentation and animation
-			if(move > 0 && mouseXpos > 0){
+			if(move > 0 && global.mouseXpos > 0){
 				sprite_index = sPlayerWalkGunNew;
 				image_xscale = 4;
 				facing = "right";
 				badShot = false;
 				running = true;
 			} 
-			if(move > 0 && mouseXpos < 0){
+			if(move > 0 && global.mouseXpos < 0){
 				sprite_index = sPlayerWalkGunBack;
 				image_xscale = 4;
 				facing = "right";
 				badShot = true;
 				running = true;
 			}
-			if(move < 0 && mouseXpos > 0){
+			if(move < 0 && global.mouseXpos > 0){
 				sprite_index = sPlayerWalkGunBack;
 				image_xscale = -4;
 				facing = "left";
 				badShot = true;
 				running = true;
 			}
-			if(move < 0 && mouseXpos < 0){
+			if(move < 0 && global.mouseXpos < 0){
 				sprite_index = sPlayerWalkGunNew;
 				image_xscale = -4;
 				facing = "left";
@@ -233,9 +230,9 @@ pRecoil = function(){
 
 //Get gun
 getGunPistol = function(){
-	if(place_meeting(x,y,oGun) && haveGun == false &&
+	if(place_meeting(x,y,oGun) && global.haveGun == false &&
 	   keyboard_check_pressed(ord("E"))){ 
-		haveGun = true;
+		global.haveGun = true;
 		oControl.gotPistol = true;
 		instance_destroy(oGun,false);
 	}
@@ -249,19 +246,19 @@ buttonsDisplay = function(){
 	
 ///Reload function
 reload = function(){
-	if(keyboard_check_pressed(ord("R")) && haveGun && atualBullets < global.Bullets){
+	if(keyboard_check_pressed(ord("R")) && global.haveGun && atualBullets < global.Bullets){
 		audio_play_sound(sndReload,1,0);
 		alarm[2] = 5;
 		
 	}
 	
 	//Reload recomendation
-	if(atualBullets < (global.Bullets/2) && haveGun){
+	if(atualBullets < (global.Bullets/2) && global.haveGun){
 			reloadRecomended = true;
 			//Buttons display
 			buttonsDisplay();
 	} 
-	else if(atualBullets > (global.Bullets/2) && haveGun){
+	else if(atualBullets > (global.Bullets/2) && global.haveGun){
 		reloadRecomended = false;
 		alarm[1]=-1;
 	}
@@ -272,12 +269,12 @@ reload = function(){
 shot = function(){
 	var shot = mouse_check_button_pressed(mb_left); // Check left click
 	
-	if(haveGun && shot && atualBullets > 0) // If player have the gun and shots
+	if(global.haveGun && shot && atualBullets > 0) // If player have the gun and shots
 	{
 		atualBullets -= 1;
 		
 		/// Checking mouse position to shot
-		if(mouseXpos > 0) //Creating shot and the bullet shell to the right.
+		if(global.mouseXpos > 0) //Creating shot and the bullet shell to the right.
 		{
 			var shoot = instance_create_layer(xPosR, yPos-5,"Player",oShot);
 			
@@ -286,7 +283,7 @@ shot = function(){
 			bShell.vsp = choose(-8,-6,-8.5,-7);
 			bShell.hsp = choose(-6,-5,-4,-3,-2,-1,0,1,2,3);
 		}
-		if(mouseXpos < 0)//Creating shot and the bullet shell to the left.
+		if(global.mouseXpos < 0)//Creating shot and the bullet shell to the left.
 		{
 			var shoot = instance_create_layer(xPosL, yPos-5,"Player",oShot);
 			

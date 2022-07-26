@@ -51,7 +51,7 @@ wy = window_mouse_get_y();
 dir = point_direction(x,y,wx, wy);
 
 //Mouse position
-mouseXpos = sign(wx-x);
+global.mouseXpos = sign(wx-x);
 
 ///Shot system
 shot();

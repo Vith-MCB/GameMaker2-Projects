@@ -1,6 +1,6 @@
 //Draw Life
 Xlife = 30;
-repeat(playerLife){
+repeat(global.playerLife){
 	//Y position of the life
 	Ylife = 35;
 	
@@ -23,7 +23,7 @@ if(flashAlpha > 0){
 }
 
 //Gun show system, it shows a gun that point at mouse direction
-if(haveGun){
+if(global.haveGun){
 	yPos = y-35;
 	xPosR = x+40;
 	xPosL = x-40;
