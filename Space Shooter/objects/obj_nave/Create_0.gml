@@ -32,7 +32,6 @@ move = function(){
 global.shotRate = 2;
 
 
-
 //Shot level upgrade
 
 upgradeShot = function(){
