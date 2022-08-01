@@ -4,6 +4,13 @@ velh = 0;
 velv = 0;
 vel = 5;
 
+//Life system
+
+globalvar playerLife, actLife, staticLife;
+playerLife = 3;
+staticLife = 3;
+actLife = playerLife;
+
 move = function(){
 	//Movimentation
 	var up, down, left, right;
@@ -28,8 +35,9 @@ move = function(){
 }
 
 
-//Shot rate (level)
-global.shotRate = 2;
+//Shot system
+global.shotRate = 2; // Shot level
+global.shotSpeed = 1;
 
 
 //Shot level upgrade
@@ -43,13 +51,6 @@ upgradeShot = function(){
 	}
 }
 
-
-//Life system
-
-globalvar playerLife, actLife, staticLife;
-playerLife = 3;
-staticLife = 3;
-actLife = playerLife;
 
 pLife = function(){
 	if(playerLife = 0){
@@ -114,7 +115,7 @@ shot4 = function(){
 atirando = function(){
 	if(keyboard_check(vk_space) && alarm[1] == -1){
 		//Initializin the alarm for the shot
-		alarm[1] = room_speed;
+		alarm[1] = room_speed/global.shotSpeed;
 		
 		//Shot level 1
 		if(global.shotRate == 2){

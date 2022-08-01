@@ -13,6 +13,7 @@
     {"id":{"name":"obj_tiroInimigo2","path":"objects/obj_tiroInimigo2/obj_tiroInimigo2.yy",},"order":5,},
     {"id":{"name":"spr_tiro2","path":"sprites/spr_tiro2/spr_tiro2.yy",},"order":4,},
     {"id":{"name":"obj_enemy2","path":"objects/obj_enemy2/obj_enemy2.yy",},"order":1,},
+    {"id":{"name":"snd_upgrade","path":"sounds/snd_upgrade/snd_upgrade.yy",},"order":4,},
     {"id":{"name":"spr_life","path":"sprites/spr_life/spr_life.yy",},"order":1,},
     {"id":{"name":"spr_explosion","path":"sprites/spr_explosion/spr_explosion.yy",},"order":3,},
     {"id":{"name":"obj_enemy","path":"objects/obj_enemy/obj_enemy.yy",},"order":0,},
