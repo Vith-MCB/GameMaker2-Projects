@@ -3,6 +3,10 @@ randomize();
 choosePU = 0;
 const = 0;
 
+//Giving random moviment
+speed = 2;
+direction = irandom(359);
+
 //Check collision with player
 pCollision = function() //Choosing the upgrades randomly
 {
