@@ -1,3 +1,4 @@
+/// @description Upgrades for the Player
 //Randomizer
 randomize();
 upgrade = 0;
@@ -9,7 +10,7 @@ if(chance > 95)
 else{upgrade = 1;} //95% chance to generate coin
 
 //upgrade generation
-upgradeX = 1700;
+upgradeX = room_width + 400;
 upgradeY = irandom_range(120,620);
 
 switch (upgrade){

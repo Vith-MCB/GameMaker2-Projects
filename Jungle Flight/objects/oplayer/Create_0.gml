@@ -15,6 +15,7 @@ flight = function()
 	if(keyboard_check_pressed(vk_up)) // When player press up, the bird flies
 	{
 			vspeed = -4;
+			instance_create_layer(x,y,"Player",oFeathers);
 	}
 }
 
